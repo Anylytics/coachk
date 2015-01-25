@@ -1,0 +1,68 @@
+<div class='temperatures'>
+
+  <!-- header and options -->
+  <div class='chart-header'>
+    <h3>Average high and low temperature</h3>
+
+    <!-- switch between celsius and fahrenheit -->
+    <div class='radio-group'>
+      <label>LIVE <input type='radio' name='{{degreeType}}' value='celsius' checked></label>
+      <label>CUSTOM <input type='radio' name='{{degreeType}}' value='fahrenheit'></label>
+    </div>
+
+    <!-- dropdown menu -->
+    <select value='{{selected}}'>
+      {{#cities:i}}
+      <option value='{{i}}'>{{name}}</option>
+      {{/cities}}
+    </select>
+  </div>
+
+  <!-- the chart -->
+  <div class='chart'>
+    <div id='svg_wrapper'> <!-- needed to determine size of SVG element in Firefox -->
+      <svg id='svg'>
+
+        <!-- gradient - higher temperatures are redder, lower temperatures are bluer -->
+        <defs>
+          <linearGradient id='gradient' x2='0' y2='100%' gradientUnits='userSpaceOnUse'>
+            <stop offset='0%' stop-color='rgb(255,0,0)' />
+            <stop offset='100%' stop-color='rgb(0,0,255)' />
+          </linearGradient>
+        </defs>
+
+        <!-- horizontal line representing freezing -->
+        <g transform='translate( 0, {{ yScale(0) }} )'>
+          <line class='freezing' x2='{{width}}'/>
+          <text class='freezing-label-bg' x='{{ xScale(6) }}' y='0.3em'>freezing</text>
+          <text class='freezing-label' x='{{ xScale(6) }}' y='0.3em'>freezing</text>
+        </g>
+
+
+          <!-- the band -->
+          <polyline fill='#fff' stroke='url(#gradient)' class='temperature-band' points='{{ band(timeBand) }}'/>
+
+
+          {{#timeBand: i}}
+            <!-- point markers for average highs -->
+            <g class='marker' transform='translate({{ xScale(i+0.5) }},{{ yScale( counts[i] ) }})'>
+              <circle r='2'/>
+              <text y='-10'>{{ counts[i] }}</text>
+            </g>
+
+            <!-- point markers for average lows
+            <g class='marker' transform='translate({{ xScale(i+0.5) }},{{ yScale(low) }})'>
+              <circle r='2'/>
+              <text y='15'>{{ format(low) }}</text>
+            </g>-->
+          {{/timeBand}}
+      </svg>
+    </div>
+
+    <div class='month-labels'>
+      {{#timeBand:i}}
+        <span style='width: {{ 100 / monthNames.length }}%;'>{{ timeBand[i] }}</span>
+      {{/timeBand}}
+    </div>
+  </div>
+</div>

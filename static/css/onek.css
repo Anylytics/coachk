@@ -63,23 +63,6 @@ div#header > img#ball  {
 	}
 }
 
-div#tagline {
-	display:block;
-	width:100%;
-	position:fixed;
-	top:170px;
-	text-align:center;
-    -webkit-animation-duration: 0.75s;
-    -moz-animation-duration: 0.75s;
-    -ms-animation-duration: 0.75s;
-    -o-animation-duration: 0.75s;
-    animation-duration: 0.75s;
-    -webkit-animation-delay: 0.65s;
-    -moz-animation-delay: 0.65s;
-    -ms-animation-delay: 0.65s;
-    -o-animation-delay: 0.65s;
-    animation-delay: 0.65s;
-}
 
 div#tagline > h1 {
 	color:#003366;
@@ -92,6 +75,13 @@ div#spacer {
 
 div#spacer.visible-xs {
 	height:40px;
+}
+
+/****** FOOTER *********/
+
+footer > div {
+	text-align:right;
+	margin-right:20px;
 }
 
 
@@ -175,6 +165,7 @@ span.schoolRecord {
 		padding:10px;
 		display:inline-block;
 		position:absolute;
+		left:-30px;
 	}
 
 	div.teamInfo {
@@ -193,10 +184,16 @@ div#scoreBoard {
 	display:inline-block;
 	height:100%;
 	clear:both;
-	top:-80px;
+	top:-30px;
 	font-family:'Dots',sans-serif;
-	font-size:7rem;
 	padding-left: 30px
+}
+
+div#scoreBoard > div#scoreValue {
+	font-size:7rem;
+}
+div#scoreBoard > div#time {
+	font-size:3rem;
 }
 
 @media (max-width: 768px) {
@@ -212,7 +209,7 @@ div#scoreBoard {
 
 
 div#timelineContainer {
-	height:200px;
+	height:280px;
 	width:100%;
 	background-color:darkgray;
 }
@@ -380,4 +377,11 @@ div.milestoneTile > span.date {
 
 div#oneThou {
 	width:100%;
+}
+
+
+
+
+div#accomplishments {
+	background-color:#0680CD;
 }
