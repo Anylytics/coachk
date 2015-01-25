@@ -72,7 +72,7 @@ ractive = new Ractive({
 // recompute xScale and yScale when we need to
 ractive.observe({
   width: function ( width ) {
-    this.set( 'xScale', linearScale([ 0, 20 ], [ 0, width ]) );
+    this.set( 'xScale', linearScale([ 0, 10 ], [ 0, width ]) );
   },
   height: function ( height ) {
     this.set( 'yScale', linearScale([ 0, 10 ], [ height - 40, 25 ]) );

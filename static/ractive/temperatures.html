@@ -2,20 +2,25 @@
 
   <!-- header and options -->
   <div class='chart-header'>
-    <h3>Average high and low temperature</h3>
 
-    <!-- switch between celsius and fahrenheit -->
+    <!-- switch between celsius and fahrenheit 
     <div class='radio-group'>
       <label>LIVE <input type='radio' name='{{degreeType}}' value='celsius' checked></label>
       <label>CUSTOM <input type='radio' name='{{degreeType}}' value='fahrenheit'></label>
+    </div>-->
+
+    <div class="toggle">
+      <input type="checkbox" class="check"  checked="true">
+      <b class="b switch"></b>      <!--Label for variable whether LIVE or CUSTOM goes here-->
+      <b class="b track"></b>
     </div>
 
     <!-- dropdown menu -->
-    <select value='{{selected}}'>
+    <!--<select value='{{selected}}'>
       {{#cities:i}}
       <option value='{{i}}'>{{name}}</option>
       {{/cities}}
-    </select>
+    </select>-->
   </div>
 
   <!-- the chart -->
@@ -31,22 +36,16 @@
           </linearGradient>
         </defs>
 
-        <!-- horizontal line representing freezing -->
-        <g transform='translate( 0, {{ yScale(0) }} )'>
-          <line class='freezing' x2='{{width}}'/>
-          <text class='freezing-label-bg' x='{{ xScale(6) }}' y='0.3em'>freezing</text>
-          <text class='freezing-label' x='{{ xScale(6) }}' y='0.3em'>freezing</text>
-        </g>
 
 
           <!-- the band -->
-          <polyline fill='#fff' stroke='url(#gradient)' class='temperature-band' points='{{ band(timeBand) }}'/>
+          <polyline fill='#fff' stroke='#000' class='temperature-band' points='{{ band(timeBand) }}'/>
 
 
           {{#timeBand: i}}
             <!-- point markers for average highs -->
             <g class='marker' transform='translate({{ xScale(i+0.5) }},{{ yScale( counts[i] ) }})'>
-              <circle r='2'/>
+              <circle r='6'/>
               <text y='-10'>{{ counts[i] }}</text>
             </g>
 

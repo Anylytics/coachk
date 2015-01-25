@@ -1,7 +1,7 @@
 import sqlite3
 from flask import Flask, render_template, abort, request, jsonify, g
 
-DATABASE = '/Users/gokuls/Projects/coachk-backend/coachk.db'
+DATABASE = '../coachk.db'
 
 app = Flask(__name__)
 
@@ -29,7 +29,7 @@ def data():
     band = []
     count = []
     c = get_db().cursor()
-    for row in c.execute('SELECT * FROM (SELECT * from aggbins order by bin DESC limit 20) T1 order by bin ASC;'):
+    for row in c.execute('SELECT * FROM (SELECT * from aggbins order by bin DESC limit 10) T1 order by bin ASC;'):
         band.append( row[0] )
         count.append( row[1] )
     return jsonify(band = band, counts = count);
