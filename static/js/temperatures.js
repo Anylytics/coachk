@@ -1,7 +1,9 @@
 // Now we've configured RequireJS, we can load our dependencies and start
-define([ 'ractive', 'rv!../ractive/temperatures', 'jquery', "tweets"], function ( Ractive, template, jquery, tweetRactive) {
+define([ 'ractive', 'rv!../ractive/temperatures', 'jquery', "tweets", "bootstrap"], function ( Ractive, template, jquery, tweetRactive, bootstrap) {
 
 var linearScale, getPointsArray, resize, ractive, twitterdata;
+
+
 
 //our polling function
 function poll() {
@@ -91,6 +93,7 @@ ractive = new Ractive({
 });
 
 
+
 // recompute xScale and yScale when we need to
 ractive.observe({
   width: function ( width ) {
@@ -118,6 +121,11 @@ resize();
 setInterval(poll, 60000);
 poll();
 
+
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
 return ractive;
 

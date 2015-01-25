@@ -1,7 +1,7 @@
-<div class='temperatures'>
+<div class='temperatures' >
 
   <!-- header and options -->
-  <div class='chart-header'>
+  <div class='chart-header'  >
 
     <!-- switch between celsius and fahrenheit
     <div class='radio-group'>
@@ -9,12 +9,15 @@
       <label>CUSTOM <input type='radio' name='{{degreeType}}' value='fahrenheit'></label>
     </div>-->
 
-    <div class="toggle">
+    <div class="toggle" data-toggle="tooltip" data-placement="top" title="Toggle back to live (Green)">
       <input type="checkbox" class="check"  checked="true">
       <b class="b switch"></b>      <!--Label for variable whether LIVE or CUSTOM goes here-->
       <b class="b track"></b>
     </div>
 
+    <div id="info" title="Use this timeline to track tweets as the game plays" >
+      <h3>Blue Devils Hype Graph</h3>
+    </div>
 
   </div>
 
@@ -37,9 +40,10 @@
 
           {{#timeBand: i}}
             <!-- point markers for average highs -->
-            <g class='marker' transform='translate({{ xScale(i+0.5) }},{{ yScale( counts[i] ) }})'>
-              <circle on-click='load_tweets:{{timeBand[i]}}' r='6'/>
-              <text y='-10' on-click='load_tweets:{{timeBand[i]}}'>{{ counts[i] }}</text>
+            <g class='marker' fill="#003366" transform='translate({{ xScale(i+0.5) }},{{ yScale( counts[i] ) }})'>
+              <text id="timelineText" y='6' on-click='load_tweets:{{timeBand[i]}}'>{{ counts[i] }}</text>
+              <circle  id="clickMarker" on-click='load_tweets:{{timeBand[i]}}' r='10' />
+              <rect id="timeSelector" height="400px" width="60px" opacity="0" x="-30px" y="-250px"  on-click='load_tweets:{{timeBand[i]}}'>{{ counts[i] }}/>
 
             </g>
           {{/timeBand}}
