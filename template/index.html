@@ -5,34 +5,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>#1k #coachk</title>
+    <link href="../static/css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/anylytics.css"/>
     <link rel="stylesheet" href="../static/css/onek.css"/>
     <link rel="stylesheet" href="../static/css/animate.css"/>
     <link rel="icon" type="image/x-icon" href="../static/img/favicon.png">
-    <script type="text/javascript" src="../static/js/countdown.js"></script>
+    <script type="text/javascript" src="../static/js/track.js"></script>
 
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 
 
 </head>
-<body>
+<body class="animated fadeIn" >
 
-<div id="share">
+<!--<div id="share">
     <a href="http://twitter.com/home?status=Celebrating Coach K's 1000th win:+http://onekforcoachk.com"><div id="twitter"><img class="social" src="../static/img/tweet.png"/></div></a>
     <a href="http://www.facebook.com/share.php?u=http://onekforcoachk.com&title=Celebrating Coach K's 1000th win"><div id="facebook"><img class="social"  src="../static/img/fb.png"/></div></a>
     <a href="http://www.reddit.com/submit?url=http://onekforcoachk.com&title=Celebrating Coach K's 1000th win"><div id="reddit"><img class="social"  src="../static/img/reddit.png"/></div></a>
-</div>
+</div>-->
 
-<div id="header">
-    <img id="logo" src="../static/img/DUKE_logohdr.png"/>
+<div id="header" class="hidden-xs">
+    <img id="logo"src="../static/img/1kicon.png"/>
     <img id="ball" class="animated bounceInDown" src="../static/img/ball.png"/>
 </div>
-<div id="tagline" class="animated flipInY"><h1>#1K #COACHK</h1><br><div id="countbox1"></div></div>
+
+<div id="header" class="visible-xs">
+    <img id="logo"src="../static/img/1kicon.png"/>
+    <img id="ball" class="animated bounceInDown" src="../static/img/ball.png"/>
+</div>
+
+<div id="spacer" class="hidden-xs"></div>
+<div id="spacer" class="visible-xs"></div>
+
+<div id="bodyContent">
+
+    <div id="score">
+        <div id="home" class="team">
+            <h2>ST. JOHNS</h2>
+        </div>
+
+        <div id="scoreBoard">
+            <h2>48-55</h2>
+        </div>
+
+        <div id="away" class="team">
+            <h2>DUKE</h2>
+        </div>
+    </div>
+
+    <div id="timelineContainer">
+        <img style="height:200px;" src="../static/img/timelineholder.png"/>
+    </div>
+
+    <div id="tweetBoxContainer">
+        <div id="tweetBox">
+            <div id="tweetBoxHead">
+                <span id="twitterImg">
+                    <img src="../static/img/twitter_icon_small.png"/>
+                </span>
+                <!--Time info goes here, either LIVE or selected hour-->
+                <span id="hourContents"><div id="redCirc"></div>LIVE</span>
+            </div>
+            <div id="tweetBoxContents">
+                <!--Iterate over tweets returned in 30s bin and display each-->
+                <div class="tweetContainer">
+                    <div class="tweetProfileImg"><img src="https://pbs.twimg.com/profile_images/524975050269945856/tw42hcAH_normal.jpeg"/></div>
+                    <div class="tweetContents">
+                        <div class="tweetHeader"><span class="userName">Duke Basketball</span><span class="userID">@duke_mbb</span><span id="timeStamp">(8:03PM)</span></div>
+                        <div class="tweetBody">Check out this game!! #duke #hashtagsaresocool #awyeah</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="coachKMuseum">
+    </div>
+
+</div>
 
 
-
-<a class="twitter-timeline animated bounceInDown" href="https://twitter.com/search?q=%231k%20%23coachk" data-widget-id="557800958282182657">Tweets about #1k #coachk</a>
 
 
 </body>

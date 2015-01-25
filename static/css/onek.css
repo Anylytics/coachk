@@ -4,42 +4,59 @@
 	http://anylytics.io
 */
 
+/****** HEADER STYLING *****/
+
+
 div#header {
 	z-index:10;
-	height:150px;
+	height:70px;
 	width:100%;
 	position:fixed;
 	top:0;
 	left:0;
 	right:0;
 	background-color:#003366;
-	border-bottom-width:15px;
+	border-bottom-width:5px;
 	border-bottom-style:solid;
 	border-bottom-color:#262626;
 }
 
+div#header.visible-xs {
+	height:40px;
+	border-bottom-width:5px;
+}
+
 div#header > img#logo  {
 	z-index:50;
-	height:80px;
+	height:50px;
 	display:block;
 	position:absolute;
 	left:0;
 	right:0;
 	margin:auto;
-	margin-top:35px;
+	margin-top:10px;
+}
+
+div#header.visible-xs >img#logo {
+	height:20px;
+	margin-top:10px;
+	margin-left:30px;
 }
 
 div#header > img#ball  {
 	z-index:40;
-	height:80px;
+	height:40px;
 	display:block;
 	position:absolute;
 	left:0;
 	right:0;
 	margin:auto;
-	margin-top:100px;
+	margin-top:50px;
 }
 
+div#header.visible-xs >img#ball {
+	display:none;
+}
 
 div#tagline {
 	display:block;
@@ -64,51 +81,170 @@ div#tagline > h1 {
 	font-size:3rem;
 }
 
-div#countbox1 > h2 {
-	color:#003366;
-	font-size:2.5rem;
+div#spacer {
+	height:70px;
 }
 
-.twitter-timeline {
+div#spacer.visible-xs {
+	height:40px;
+}
+
+
+/****** CONTENT STYLING *****/
+
+div#bodyContent {
+	//margin-top:70px;
+}
+
+/******* SCORE BOARD ******/
+
+div#score {
 	display:block;
 	width:100%;
-	position:absolute;
-	top:400px;
-	left:0;
-	right:0;
-	margin:auto;
-    -webkit-animation-duration: 0.75s;
-    -moz-animation-duration: 0.75s;
-    -ms-animation-duration: 0.75s;
-    -o-animation-duration: 0.75s;
-    animation-duration: 0.75s;
-    -webkit-animation-delay: 1.65s;
-    -moz-animation-delay: 1.65s;
-    -ms-animation-delay: 1.65s;
-    -o-animation-delay: 1.65s;
-    animation-delay: 1.65s;
-}
-
-div#share {
-	z-index:100;
-	position:fixed;
-	left:0px;
-	top:30%;
-	height:180px;
-	width:60px;
-	background-color:red;
 	text-align:center;
+	height:100px;
 }
 
-div#facebook {
-	height:60px;
-	background-color:#3b5998;
+div.team {
+	color:#262626;
+	width:29%;
+	display:inline-block;
 }
-div#twitter {
-	height:60px;
-	background-color:#55acee;
+
+div#scoreBoard {
+	width:40%;
+	display:inline-block;
 }
-div#reddit {
-	height:60px;
+
+
+
+/******* TIME-TWEET GRAPH ******/
+
+
+div#timelineContainer {
+	height:200px;
+	width:100%;
+	background-color:darkgray;
+}
+
+
+div#tweetBoxContainer {
+	height:400px;
+	width:100%;
+}
+
+div.timelineContents {
+	position:absolute;
+}
+
+div#timelineYAxis {
+	//height:90%;
+	width:20px;
+	height:10%;
+	background-color:black;
+	display:inline-block;
+}
+
+div#timelineBody {
+	left:0;
+	//height:90%;
+	width:calc(100%-20px);
+	width:20px;
+	display:inline-block;
+	background-color:yellow;
+}
+
+
+
+/******* TWEET CONTAINER ********/
+
+div#tweetBox {
+	margin-left:30%;
+	margin-right:20%;
+	margin-top:30px;
+	height:360px;
+	overflow-y:auto;
+	overflow-x:hidden;
 	background-color:white;
+	border-radius:5px;
 }
+
+@media (max-width: 768px) {
+	div#tweetBox {
+		margin-left:20px;
+		margin-right:20px;
+	}
+}
+
+div#tweetBoxHead {
+	height:40px;
+	width:100%;
+	padding:10px;
+	border-bottom-style:solid;
+	border-bottom-color:lightgray;
+	border-bottom-width:1px;
+	font-family:'SourceSans', sans-serif;
+}
+
+div#tweetBoxHead > span {
+	display:inline-block;
+}
+
+span#twitterImg {
+	float:right;
+}
+
+/********** Tweets ********/
+
+div.tweetContainer {
+	padding:10px;
+	border-bottom-style:solid;
+	border-bottom-color:lightgray;
+	border-bottom-width:1px;
+}
+
+div#redCirc {
+	background-color:red;
+	height:5px;
+	width:5px;
+	border-radius:50%;
+	display:inline-block;
+	margin:2px;
+}
+
+div.tweetContainer:hover {
+	background-color:#CFEDED;
+}
+
+div.tweetProfileImg {
+	padding-right:10px;
+	display:inline-block;
+}
+
+div.tweetProfileImg > img {
+	border-radius:5px;
+	height:50px;
+}
+
+div.tweetContents {
+	display:inline-block;
+}
+
+span.userName {
+	font-size:1.1em;
+	font-weight:bold;
+	padding-right:10px;
+}
+
+span.userID {
+	padding-right:10px;
+}
+
+span.timeStamp {
+	color:lightgray;
+	float:right;
+}
+
+
+
+

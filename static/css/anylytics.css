@@ -29,7 +29,7 @@
 /******* TYPOGRAPHY ********/
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'SourceSans';
+	font-family: 'SourceSans', sans-serif;
 }
 
 #marginfix {
@@ -53,7 +53,7 @@ h5,h6 {
 }
 
 html, body {
-	font-family: 'Andada-Regular';
+	font-family: 'Andada-Regular', Georgia, serif;
 	background-color:#e5e5e5;
 	height:100%;
 	width:100%;
@@ -69,4 +69,31 @@ a:hover {
 	color: #E2B197;
 	text-decoration: none;
 	cursor: pointer;
+}
+
+
+/********* Sharing Buttons ******/
+
+div#share {
+	z-index:100;
+	position:fixed;
+	left:0px;
+	top:30%;
+	height:180px;
+	width:60px;
+	background-color:red;
+	text-align:center;
+}
+
+div#facebook {
+	height:60px;
+	background-color:#3b5998;
+}
+div#twitter {
+	height:60px;
+	background-color:#55acee;
+}
+div#reddit {
+	height:60px;
+	background-color:white;
 }
