@@ -1,8 +1,8 @@
 // Now we've configured RequireJS, we can load our dependencies and start
-define([ 'ractive', 'rv!../ractive/temperatures', 'tempdata', 'temptwitterdata'], function ( Ractive, template, tempdata, twitterdata) {
+define([ 'ractive', 'rv!../ractive/temperatures', 'jquery', "tweets"], function ( Ractive, template, jquery, tweetRactive) {
 
-var linearScale, getPointsArray, resize, ractive;
-
+var linearScale, getPointsArray, resize, ractive, twitterdata;
+console.log(tweetRactive);
 // this returns a function that scales a value from a given domain
 // to a given range. Hat-tip to D3
 linearScale = function ( domain, range ) {
@@ -45,8 +45,6 @@ ractive = new Ractive({
   el: 'timelineContainer',
   template: template,
   data: {
-    cities: tempdata,
-    selectedCity: tempdata[0],
     format: function ( val ) {
       if ( this.get( 'degreeType' ) === 'fahrenheit' ) {
         // convert celsius to fahrenheit
@@ -63,14 +61,10 @@ ractive = new Ractive({
       xScale = this.get( 'xScale' );
       yScale = this.get( 'yScale' );
       var counts = ractive.get('counts');
-
-      //[1,2,3,4,5,6,7,8,9,10,11,12];
       high = getPointsArray( counts, xScale, yScale );
-
       //return high.concat( low.reverse() ).join( ' ' );
       return high;
-    },
-    monthNames: [ 'J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D' ]
+    }
   }
 });
 
@@ -78,7 +72,7 @@ ractive = new Ractive({
 // recompute xScale and yScale when we need to
 ractive.observe({
   width: function ( width ) {
-    this.set( 'xScale', linearScale([ 0, 12 ], [ 0, width ]) );
+    this.set( 'xScale', linearScale([ 0, 20 ], [ 0, width ]) );
   },
   height: function ( height ) {
     this.set( 'yScale', linearScale([ 0, 10 ], [ height - 40, 25 ]) );
@@ -86,21 +80,24 @@ ractive.observe({
 });
 
 
-var initval = ['2300', '2301', '2302', '2303', '2304', '2305', '2306', '2307','2308','2309', '2310', '2311'];
-ractive.set('timeBand', initval);
+//var initval = ['2300', '2301', '2302', '2303', '2304', '2305', '2306', '2307','2308','2309', '2310', '2311'];
+//ractive.set('timeBand', initval);
 
 // update width and height when window resizes
 window.addEventListener( 'resize', resize );
 resize();
 
-ractive.observe('timeBand', function(newBand, oldValue, keyPath) {
-    var counts = newBand.map( function(time) {
-        if ( twitterdata[time] == undefined)
-            return 0;
-        else
-            return twitterdata[time];
-    });
-    ractive.set('counts', counts);
+$.ajax({
+    dataType: "json",
+    url: "./data",
+    success: function(json) {
+        var newBand = json["band"];
+        var newCounts = json["counts"];
+
+        ractive.set('timeBand', newBand);
+        ractive.set('counts', newCounts);
+        tweetRactive.fire('update', undefined, newBand[newBand.length-1]);
+    }
 });
 
 

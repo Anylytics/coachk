@@ -1,0 +1,10 @@
+<!--Iterate over tweets returned in 30s bin and display each-->
+{{#tweets}}
+<div class="tweetContainer">
+    <div class="tweetProfileImg"><img src="{{pic}}"/></div>
+    <div class="tweetContents">
+        <div class="tweetHeader"><span class="userName">{{username}}</span><span class="userID">@{{user_id}}</span><span id="timeStamp">{{time(dttm)}}</span></div>
+        <div class="tweetBody">{{tweet}}</div>
+    </div>
+</div>
+{{/tweets}}
