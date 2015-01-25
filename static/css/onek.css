@@ -71,7 +71,7 @@ div#header > img#question {
 	}
 	div#header > img#question {
 		padding:5px;
-		right:0;
+		margin-right:50px;
 		margin:auto;
 	}
 }
@@ -255,9 +255,14 @@ div#info > h3, h6 {
 	font-family:'SourceSans', sans-serif;
 }
 
+@media (max-width: 768px) {
+	div#info >h3 {
+		font-size:2em;
+	}
+}
+
 #clickMarker {
-	fill:#003366;
-	stroke:none;
+	//fill:black;
 }
 
 #timeSelector:hover {
@@ -300,7 +305,7 @@ div#timelineBody {
 	width:calc(100%-20px);
 	width:20px;
 	display:inline-block;
-	background-color:yellow;
+	background-color:fyellow;
 }
 
 /********toggle*******/
@@ -317,7 +322,7 @@ div#timelineBody {
   width: 60px;
   height: 40px;
   border-radius: 100px;
-  background-color: #fff;
+  background-color: #eee;
   margin: -40px -40px;
   overflow: hidden;
   box-shadow: inset 0 0 2px 1px rgba(0,0,0,.05);

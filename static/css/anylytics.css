@@ -82,23 +82,35 @@ a:hover {
 div#share {
 	z-index:100;
 	position:fixed;
-	left:0px;
-	top:30%;
-	height:180px;
-	width:60px;
-	background-color:red;
+	top:0;
+	right:25%;
+	height:30px;
+	width:80px;
 	text-align:center;
 }
 
 div#facebook {
-	height:60px;
+	height:30px;
 	background-color:#3b5998;
+	display:inline-block;
+}
+div#facebook > img {
+	height:30px;
 }
 div#twitter {
-	height:60px;
+	height:30px;
 	background-color:#55acee;
+	display:inline-block;
+}
+div#twitter > img {
+	height:30px;
 }
 div#reddit {
-	height:60px;
+	height:30px;
 	background-color:white;
+	display:inline-block;
+}
+
+div#reddit > img {
+	height:30px;
 }

@@ -41,8 +41,8 @@
           {{#timeBand: i}}
             <!-- point markers for average highs -->
             <g class='marker' fill="#003366" transform='translate({{ xScale(i+0.5) }},{{ yScale( counts[i] ) }})'>
-              <text id="timelineText" y='6' on-click='load_tweets:{{timeBand[i]}}'>{{ counts[i] }}</text>
-              <circle  id="clickMarker" on-click='load_tweets:{{timeBand[i]}}' r='10' />
+              <text id="timelineText" y='-20' x='-2' on-click='load_tweets:{{timeBand[i]}}'>{{ counts[i] }}</text>
+              <circle  id="clickMarker" on-click='load_tweets:{{timeBand[i]}}' r='5' />
               <rect id="timeSelector" height="400px" width="60px" opacity="0" x="-30px" y="-250px"  on-click='load_tweets:{{timeBand[i]}}'>{{ counts[i] }}/>
 
             </g>
