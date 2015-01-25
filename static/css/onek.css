@@ -493,7 +493,7 @@ span.timeStamp {
 div#coachKMuseum {
 	text-align:center;
 	background-color:#262626;
-	padding-top:20px;
+	padding-top:80px;
 	z-index:1;
 }
 
@@ -538,7 +538,9 @@ div#oneThou {
 	width:100%;
 }
 
-
+div#oneThou > span.winNum {
+	font-size:4em;
+}
 
 
 div#accomplishments {
