@@ -561,6 +561,7 @@ div#oneThou > span.winNum {
 div#accomplishments {
 	//background-color:#0680CD;
 	text-align:center;
+	padding-top:50px;
 }
 
 div#accomplishments > h1 {
@@ -598,15 +599,15 @@ div.accomplishmentBadge {
 	margin-bottom:40px;
 	margin-left:auto;
 	margin-right:auto;
-	height:100px;
-	width:100px;
+	height:150px;
+	width:150px;
 	background-color:white;
 	border-radius:50%;
 	padding-top:20px;
 }
 
 div.accomplishContainer {
-	margin-top:10px;
+	margin-top:30px;
 	padding:3px;
 	padding-left:5px;
 	padding-right:5px;
@@ -617,10 +618,24 @@ div.accomplishContainer {
 
 
 div.accomplishmentBadge > span.teamCoached {
-	font-size:2.5em;
+	font-size:4em;
 }
 
 div.accomplishmentBadge > span.winNum {
 	font-size:1em;
 }
 
+div.accomplishmentBadge:hover {
+	background-color:#003366;
+	color:white;
+}
+
+div#awards {
+	//background-color:#0680CD;
+	text-align:center;
+}
+
+div#awards > h1 {
+	color:#262626;
+	padding-top:20px;
+}
