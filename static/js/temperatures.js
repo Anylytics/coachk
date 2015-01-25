@@ -161,6 +161,7 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
 
+
 return ractive;
 
 });

@@ -130,6 +130,14 @@ div#score {
 	margin-top:20px;
 }
 
+#oneK {
+	height:250px;
+	margin:50px;
+	border-radius:5px;
+}
+
+}
+
 div.team {
 	width:34%;
 	height:100%;
@@ -241,7 +249,7 @@ div#scoreBoard > div#time {
 
 
 div#timelineContainer {
-	padding-top:40px;
+	margin-top:350px;
 	height:280px;
 	width:100%;
 	background-color:darkgray;
