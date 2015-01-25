@@ -212,13 +212,13 @@ div#scoreBoard {
 	display:inline-block;
 	height:100%;
 	clear:both;
-	top:-30px;
-	font-family:'Dots',sans-serif;
+	top:-60px;
+	//font-family:'Dots',sans-serif;
 	padding-left: 30px
 }
 
 div#scoreBoard > div#scoreValue {
-	font-size:7rem;
+	font-size:2rem;
 }
 div#scoreBoard > div#time {
 	font-size:3rem;
