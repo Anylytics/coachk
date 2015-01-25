@@ -80,6 +80,7 @@ div#header > img#question {
 div#tagline > h1 {
 	color:#003366;
 	font-size:3rem;
+	margin-top:-10px;
 }
 
 div#spacer {
@@ -253,6 +254,12 @@ div#timelineContainer {
 	height:280px;
 	width:100%;
 	background-color:darkgray;
+}
+
+@media (max-width: 768px) {
+	div#timelineContainer {
+		margin-top:400px;
+	}
 }
 
 #info {
