@@ -1,7 +1,7 @@
 import sqlite3
 from flask import Flask, render_template, abort, request, jsonify, g
 
-DATABASE = '/Users/gokuls/Projects/coachk-backend/coachk.db'
+DATABASE = '../coachk.db'
 
 app = Flask(__name__)
 
