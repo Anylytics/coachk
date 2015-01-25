@@ -1,8 +1,8 @@
 // Now we've configured RequireJS, we can load our dependencies and start
-define([ 'ractive', 'rv!../ractive/temperatures', 'jquery'], function ( Ractive, template, jquery) {
+define([ 'ractive', 'rv!../ractive/temperatures', 'jquery', "tweets"], function ( Ractive, template, jquery, tweetRactive) {
 
 var linearScale, getPointsArray, resize, ractive, twitterdata;
-
+console.log(tweetRactive);
 // this returns a function that scales a value from a given domain
 // to a given range. Hat-tip to D3
 linearScale = function ( domain, range ) {
@@ -91,30 +91,15 @@ $.ajax({
     dataType: "json",
     url: "./data",
     success: function(json) {
-        console.log(json);
         var newBand = json["band"];
         var newCounts = json["counts"];
-        //twitterdata = {};
-        //var newBand = [];
-        //for (var i =0; i<12; i++)
-            //newBand.push(twitterdata[i]);
-        console.log("NEW BAND" +newBand);
-        console.log("NEW COUNTS" +newCounts);
+
         ractive.set('timeBand', newBand);
         ractive.set('counts', newCounts);
+        tweetRactive.fire('update', undefined, newBand[newBand.length-1]);
     }
 });
 
-/*ractive.observe('timeBand', function(newBand, oldValue, keyPath) {
-    console.log("YES" + twitterdata);
-    var counts = newBand.map( function(time) {
-        if ( twitterdata[time] == undefined)
-            return 0;
-        else
-            return twitterdata[time];
-    });
-    ractive.set('counts', counts);
-}, {init: false});*/
 
 return ractive;
 

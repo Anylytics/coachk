@@ -34,5 +34,24 @@ def data():
         count.append( row[1] )
     return jsonify(band = band, counts = count);
 
+@app.route('/tweets/<timebin>')
+def tweets(timebin):
+    tweets = []
+    ids = []
+    c = get_db().cursor()
+    for row in c.execute('SELECT * FROM timebins where bin=?',[timebin]):
+        ids.append( row[1] )
+    for id in ids:
+        for row in c.execute('SELECT * FROM tweets where tweet_id=?',[id]):
+            tweet = row[3]
+            dttm = row[2]
+            user_id = row[1]
+            for user in c.execute('SELECT * FROM users where user_id=?',[user_id]):
+                userid = user[1]
+                pic = user[2]
+                username = user[3]
+                tweets.append({"tweet":tweet, "dttm": dttm, "username":username, "pic":pic, "user_id":userid})
+    return jsonify(tweets = tweets);
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000, debug='True')
