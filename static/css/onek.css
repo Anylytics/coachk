@@ -21,10 +21,14 @@ div#header {
 	border-bottom-color:#262626;
 }
 
-div#header.visible-xs {
-	height:40px;
-	border-bottom-width:5px;
+@media (max-width: 768px) {
+	div#header {
+		height:40px;
+		border-bottom-width:5px;
+	}
 }
+
+
 
 div#header > img#logo  {
 	z-index:50;
@@ -35,12 +39,6 @@ div#header > img#logo  {
 	right:0;
 	margin:auto;
 	margin-top:10px;
-}
-
-div#header.visible-xs >img#logo {
-	height:20px;
-	margin-top:10px;
-	margin-left:30px;
 }
 
 div#header > img#ball  {
@@ -54,8 +52,15 @@ div#header > img#ball  {
 	margin-top:50px;
 }
 
-div#header.visible-xs >img#ball {
+@media (max-width: 768px) {
+	div#header >img#logo {
+	height:20px;
+	margin-top:8px;
+	margin-left:30px;
+	}
+	div#header >img#ball {
 	display:none;
+	}
 }
 
 div#tagline {
@@ -102,20 +107,105 @@ div#score {
 	display:block;
 	width:100%;
 	text-align:center;
-	height:100px;
+	height:150px;
+	margin-bottom:20px;
+	margin-top:20px;
 }
 
 div.team {
-	color:#262626;
-	width:29%;
+	width:34%;
+	height:100%;
 	display:inline-block;
+	text-align:left;
+	position:relative;
 }
+
+
+img.teamImg {
+	height:150px;
+	padding:25px;
+	display:inline-block;
+	position:absolute;
+}
+
+
+
+div#away > div.teamInfo {
+	text-align:left;
+	display:inline-block;
+	top:25%;
+	position:absolute;
+	margin-left:150px;
+}
+
+div#home > img {
+	display:inline-block;
+	position:absolute;
+	right:0;
+}
+
+div#home > div.teamInfo {
+	text-align:right;
+	display:inline-block;
+	top:25%;
+	position:absolute;
+	margin-right:150px;
+	right:0;
+}
+
+span.schoolName {
+	font-size:1.4em;
+	font-weight:bold;
+}
+span.schoolMascot {
+	font-size:1.2em;
+	padding-top:10px;
+}
+span.schoolRecord {
+	font-size:1em;
+	padding-top:10px;
+}
+
+@media (max-width: 768px) {
+	div#score {
+		height:100px;
+	}
+	img.teamImg {
+		height:100px;
+		padding:10px;
+		display:inline-block;
+		position:absolute;
+	}
+
+	div.teamInfo {
+		visibility:hidden;
+	}
+	div.team {
+		width:10%
+	}
+}
+
 
 div#scoreBoard {
-	width:40%;
+	width:30%;
+	min-width:100px;
+	position:relative;
 	display:inline-block;
+	height:100%;
+	clear:both;
+	top:-80px;
+	font-family:'Dots',sans-serif;
+	font-size:7rem;
+	padding-left: 30px
 }
 
+@media (max-width: 768px) {
+	div#scoreBoard {
+		font-size:6rem;
+		top:-40px;
+		width:59%;
+	}
+}
 
 
 /******* TIME-TWEET GRAPH ******/
@@ -248,3 +338,46 @@ span.timeStamp {
 
 
 
+/******** Coach K Museum *******/
+
+div#coachKMuseum {
+	text-align:center;
+	background-color:#262626;
+	padding-top:20px;
+}
+
+div.milestoneTile {
+	margin-top:40px;
+	margin-bottom:40px;
+	margin-left:auto;
+	margin-right:auto;
+	height:200px;
+	width:200px;
+	background-color:white;
+	border-radius:2px;
+}
+
+div.milestoneTile:hover {
+	background-color:#0680CD;
+	color:white;
+}
+
+div.milestoneTile > span.winNum {
+	font-size:3em;
+}
+
+div.milestoneTile > span.teamPlayed {
+	font-size:2em;
+}
+
+div.milestoneTile > span.finalScore {
+	font-size:1.5em;
+}
+
+div.milestoneTile > span.date {
+	font-size:1em;
+}
+
+div#oneThou {
+	width:100%;
+}

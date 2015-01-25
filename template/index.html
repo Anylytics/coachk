@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="../static/css/anylytics.css"/>
     <link rel="stylesheet" href="../static/css/onek.css"/>
     <link rel="stylesheet" href="../static/css/animate.css"/>
+    <link rel="stylesheet" href="../static/css/hover.css"/>
     <link rel="icon" type="image/x-icon" href="../static/img/favicon.png">
-    <script type="text/javascript" src="../static/js/track.js"></script>
+    <!--<script type="text/javascript" src="../static/js/track.js"></script>-->
 
 
 
@@ -24,13 +25,8 @@
     <a href="http://www.reddit.com/submit?url=http://onekforcoachk.com&title=Celebrating Coach K's 1000th win"><div id="reddit"><img class="social"  src="../static/img/reddit.png"/></div></a>
 </div>-->
 
-<div id="header" class="hidden-xs">
-    <img id="logo"src="../static/img/1kicon.png"/>
-    <img id="ball" class="animated bounceInDown" src="../static/img/ball.png"/>
-</div>
-
-<div id="header" class="visible-xs">
-    <img id="logo"src="../static/img/1kicon.png"/>
+<div id="header">
+    <img id="logo" class=" hvr-buzz-out" src="../static/img/1kicon.png"/>
     <img id="ball" class="animated bounceInDown" src="../static/img/ball.png"/>
 </div>
 
@@ -40,21 +36,31 @@
 <div id="bodyContent">
 
     <div id="score">
-        <div id="home" class="team">
-            <h2>ST. JOHNS</h2>
+        <div id="away" class="team">
+            <img class="teamImg" src="../static/img/dukeScore.png"/>
+            <div class="teamInfo">
+                <span class="schoolName">Duke University</span><br />
+                <span class="schoolMascot">Blue Devils</span><br />
+                <span class="schoolRecord">(16-2)</span><br />
+            </div>
         </div>
 
         <div id="scoreBoard">
-            <h2>48-55</h2>
+            <div>0-0</div>
         </div>
 
-        <div id="away" class="team">
-            <h2>DUKE</h2>
+        <div id="home" class="team">
+            <div class="teamInfo">
+                <span class="schoolName">St. Johns</span><br />
+                <span class="schoolMascot">Red Storm</span><br />
+                <span class="schoolRecord">(13-5)</span><br />
+            </div>
+            <img class="teamImg" src="../static/img/stJohnsScore.png"/>
         </div>
     </div>
 
     <div id="timelineContainer">
-        <img style="height:200px;" src="../static/img/timelineholder.png"/>
+        <img style="height:200px;width:100%;" src="../static/img/timelineholder.png"/>
     </div>
 
     <div id="tweetBoxContainer">
@@ -80,6 +86,133 @@
     </div>
 
     <div id="coachKMuseum">
+        <h1>A Legendary Career</h1>
+        <div  class="container">
+            <div class="row">
+              <div class="col-md-4"><div class="milestoneTile hvr-float">
+                    <span class="winNum">1 <br/> </span>
+                    <span class="teamPlayed">Lehigh*<br/></span>
+                    <span class="finalScore">56-29<br/><br/></span>
+                    <span class="date">November 28, 1975<br/></span>
+              </div></div>
+              <div class="col-md-4"><div class="milestoneTile hvr-float">
+                    <span class="winNum">100 <br/> </span>
+                    <span class="teamPlayed">   Clemson <br/></span>
+                    <span class="finalScore">   73-72   <br/><br/></span>
+                    <span class="date"> February 24, 1982   <br/></span>
+              </div></div>
+              <div class="col-md-4"><div class="milestoneTile hvr-float">
+                    <span class="winNum">200<br/></span>
+                    <span class="teamPlayed">   Alabama <br/></span>
+                    <span class="finalScore">   76-67   <br/><br/></span>
+                    <span class="date"> December 13, 1986   <br/></span>
+              </div></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><div class="milestoneTile hvr-float">
+                    <span class="winNum">300<br/></span>
+                    <span class="teamPlayed">   Richmond    <br/></span>
+                    <span class="finalScore">   81-46   <br/><br/></span>
+                    <span class="date"> March 16, 1990  <br/></span>
+              </div></div>
+              <div class="col-md-4"><div class="milestoneTile hvr-float">
+                    <span class="winNum">336<br/></span>
+                    <span class="teamPlayed">   Kansas  <br/></span>
+                    <span class="finalScore">   72-65   <br/><br/></span>
+                    <span class="date"> April 1, 1991   <br/></span>
+              </div></div>
+              <div class="col-md-4"><div class="milestoneTile hvr-float">
+                    <span class="winNum">370<br/></span>
+                    <span class="teamPlayed">   Michigan    <br/></span>
+                    <span class="finalScore">   71-51   <br/><br/></span>
+                    <span class="date"> April 6, 1992   <br/></span>
+              </div></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><div class="milestoneTile hvr-float">
+                    <span class="winNum">400<br/></span>
+                    <span class="teamPlayed">   Iowa    <br/></span>
+                    <span class="finalScore">   79-76   <br/><br/></span>
+                    <span class="date"> December 22, 1993   <br/></span>
+              </div></div>
+              <div class="col-md-4"><div class="milestoneTile hvr-float">
+                    <span class="winNum">500<br/></span>
+                    <span class="teamPlayed">   UNC  <br/></span>
+                    <span class="finalScore">   77-75   <br/><br/></span>
+                    <span class="date"> February 28, 1998   <br/></span>
+              </div></div>
+              <div class="col-md-4"><div class="milestoneTile hvr-float">
+                    <span class="winNum">600<br/></span>
+                    <span class="teamPlayed">   UNC  <br/></span>
+                    <span class="finalScore">   79-53   <br/><br/></span>
+                    <span class="date"> March 11, 2001  <br/></span>
+              </div></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><div class="milestoneTile hvr-float">
+                    <span class="winNum">606<br/></span>
+                    <span class="teamPlayed">   Arizona <br/></span>
+                    <span class="finalScore">   82-72   <br/><br/></span>
+                    <span class="date"> April 2, 2001   <br/></span>
+              </div></div>
+              <div class="col-md-4"><div class="milestoneTile hvr-float">
+                    <span class="winNum">700<br/></span>
+                    <span class="teamPlayed">   Toledo  <br/></span>
+                    <span class="finalScore">   82-54   <br/><br/></span>
+                    <span class="date"> December 12, 2004   <br/></span>
+              </div></div>
+              <div class="col-md-4"><div class="milestoneTile hvr-float">
+                    <span class="winNum">747<br/></span>
+                    <span class="teamPlayed">   Georgia Tech    <br/></span>
+                    <span class="finalScore">   73-66   <br/><br/></span>
+                    <span class="date"> February 22, 2006   <br/></span>
+              </div></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><div class="milestoneTile hvr-float">
+                    <span class="winNum">800<br/></span>
+                    <span class="teamPlayed">   NCSU    <br/></span>
+                    <span class="finalScore">   87-86   <br/><br/></span>
+                    <span class="date"> March 1, 2008   <br/></span>
+              </div></div>
+              <div class="col-md-4"><div class="milestoneTile hvr-float">
+                    <span class="winNum">868<br/></span>
+                    <span class="teamPlayed">   Butler  <br/></span>
+                    <span class="finalScore">   61-59   <br/><br/></span>
+                    <span class="date"> April 5, 2010   <br/></span>
+              </div></div>
+              <div class="col-md-4"><div class="milestoneTile hvr-float">
+                    <span class="winNum">877<br/></span><span class="teamPlayed">   Bradley <br/></span>
+                    <span class="finalScore">   83-48   <br/><br/></span>
+                    <span class="date"> December 8, 2010    <br/></span>
+              </div></div>
+            </div>
+            <div class="row">
+              <div class="col-md-4"><div class="milestoneTile hvr-float">
+                    <span class="winNum">880<br/></span>
+                    <span class="teamPlayed">   UNCG  <br/></span>
+                    <span class="finalScore">   108-62  <br/><br/></span>
+                    <span class="date"> December 29, 2010   <br/></span>
+              </div></div>
+              <div class="col-md-4"><div class="milestoneTile hvr-float">
+                    <span class="winNum">900<br/></span>
+                    <span class="teamPlayed">   Michigan    <br/></span>
+                    <span class="finalScore">   73-71   <br/><br/></span>
+                    <span class="date"> March 20, 2011  <br/></span>
+              </div></div>
+              <div class="col-md-4"><div class="milestoneTile hvr-float">
+                    <span class="winNum">903<br/></span>
+                    <span class="teamPlayed">   Michigan State  <br/></span>
+                    <span class="finalScore">   74-69   <br/><br/></span>
+                    <span class="date"> November 15, 2011   <br/></span>
+              </div></div>
+            </div>
+            <div class="row">
+              <div class="col-md-12"><div class="milestoneTile hvr-float" id="oneThou">
+                    <span class="winNum">1000<br/></span>
+              </div></div>
+            </div>
+        </div>
     </div>
 
 </div>

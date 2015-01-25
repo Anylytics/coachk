@@ -26,10 +26,15 @@
  src: url("../fonts/Andada-Bold.otf") format("opentype");
 }
 
+@font-face {
+ font-family: 'Dots';
+ src: url("../fonts/BPdotsUnicase.otf") format("opentype");
+}
+
 /******* TYPOGRAPHY ********/
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'SourceSans', sans-serif;
+	font-family: 'Andada-Regular', Georgia, serif;
 }
 
 #marginfix {
@@ -41,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1,h2 {
-	color:#456942;
+	color:white;
 }
 
 h3,h4 {
