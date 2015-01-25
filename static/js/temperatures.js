@@ -115,6 +115,7 @@ ractive.observe({
     {
       poll();
     }
+    tweetRactive.set("isLive", status);
   }
 });
 
