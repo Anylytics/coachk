@@ -4,7 +4,6 @@ define([ 'ractive', 'rv!../ractive/temperatures', 'jquery', "tweets", "bootstrap
 var linearScale, getPointsArray, resize, ractive, twitterdata;
 
 
-
 //our polling function
 function poll() {
   console.log("Polling");
@@ -64,6 +63,8 @@ ractive = new Ractive({
   el: 'timelineContainer',
   template: template,
   data: {
+    isChecked: true,
+    max_count: 5,
     format: function ( val ) {
       if ( this.get( 'degreeType' ) === 'fahrenheit' ) {
         // convert celsius to fahrenheit
@@ -92,6 +93,27 @@ ractive = new Ractive({
   }
 });
 
+//our polling function
+function poll() {
+  if ( ractive.get("isChecked") == true) {
+    console.log("Polling");
+    $.ajax({
+      dataType: "json",
+      url: "./data",
+      success: function(json) {
+          var newBand = json["band"];
+          var newCounts = json["counts"];
+          var max_count = Math.max.apply(Math, newCounts);
+
+          ractive.set('max_count', max_count);
+          ractive.set('timeBand', newBand);
+          ractive.set('counts', newCounts);
+          tweetRactive.fire('update', undefined, newBand[newBand.length-1]);
+      }
+    });
+  }
+}
+
 
 
 // recompute xScale and yScale when we need to
@@ -100,13 +122,25 @@ ractive.observe({
     this.set( 'xScale', linearScale([ 0, 10 ], [ 0, width ]) );
   },
   height: function ( height ) {
-    this.set( 'yScale', linearScale([ 0, 10 ], [ height - 40, 25 ]) );
+    var max_count = ractive.get("max_count");
+    this.set( 'yScale', linearScale([ 1, max_count*1.25 ], [ height - 40, 25 ]) );
+  },
+  max_count: function( max_count ) {
+    var height = ractive.get("height");
+    this.set( 'yScale', linearScale([ 1, max_count*1.25 ], [ height - 40, 25 ]) );
+  },
+  isChecked: function(status){
+    if (status == true)
+    {
+      poll();
+    }
+    tweetRactive.set("isLive", status);
   }
 });
 
 
 ractive.on( 'load_tweets', function( event, timebin )  {
-
+  ractive.set("isChecked", false);
   tweetRactive.fire('update', undefined, timebin);
 
 });

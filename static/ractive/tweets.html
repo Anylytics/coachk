@@ -1,10 +1,26 @@
-<!--Iterate over tweets returned in 30s bin and display each-->
-{{#tweets}}
-<div class="tweetContainer">
-    <div class="tweetProfileImg"><img src="{{pic}}"/></div>
-    <div class="tweetContents">
-        <div class="tweetHeader"><span class="userName">{{username}}</span><a href="http://twitter.com/{{user_id}}"><span class="userID">@{{user_id}}</span></a><span id="timeStamp">{{time(dttm)}}</span></div>
-        <div class="tweetBody">{{tweet}}</div>
-    </div>
+<div id="tweetBoxHead">
+    <!--Time info goes here, either LIVE or selected hour-->
+    {{#isLive}}
+        <span id="hourContents"><div id="redCirc"></div>
+            LIVE
+        </span>
+    {{/isLive}}
+    {{^isLive}}
+        {{time2(currentTime)}}
+    {{/isLive}}
+    <span id="twitterImg">
+        <img src="./static/img/twitter_icon_small.png"/>
+    </span>
 </div>
-{{/tweets}}
+<div id="tweetBoxContents">
+    <!--Iterate over tweets returned in 30s bin and display each-->
+    {{#tweets}}
+    <div class="tweetContainer">
+        <div class="tweetProfileImg"><img src="{{pic}}"/></div>
+        <div class="tweetContents">
+            <div class="tweetHeader"><span class="userName">{{username}}</span><a href="http://twitter.com/{{user_id}}"><span class="userID">@{{user_id}}</span></a><span id="timeStamp">{{time(dttm)}}</span></div>
+            <div class="tweetBody">{{tweet}}</div>
+        </div>
+    </div>
+    {{/tweets}}
+</div>
