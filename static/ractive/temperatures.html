@@ -2,7 +2,7 @@
 
   <!-- header and options -->
   <div class='chart-header'>
-    <h3>Average high and low temperature</h3>
+    <h3>Tweets!!</h3>
 
     <!-- switch between celsius and fahrenheit -->
     <div class='radio-group'>
@@ -10,12 +10,6 @@
       <label>CUSTOM <input type='radio' name='{{degreeType}}' value='fahrenheit'></label>
     </div>
 
-    <!-- dropdown menu -->
-    <select value='{{selected}}'>
-      {{#cities:i}}
-      <option value='{{i}}'>{{name}}</option>
-      {{/cities}}
-    </select>
   </div>
 
   <!-- the chart -->
@@ -31,13 +25,6 @@
           </linearGradient>
         </defs>
 
-        <!-- horizontal line representing freezing -->
-        <g transform='translate( 0, {{ yScale(0) }} )'>
-          <line class='freezing' x2='{{width}}'/>
-          <text class='freezing-label-bg' x='{{ xScale(6) }}' y='0.3em'>freezing</text>
-          <text class='freezing-label' x='{{ xScale(6) }}' y='0.3em'>freezing</text>
-        </g>
-
 
           <!-- the band -->
           <polyline fill='#fff' stroke='url(#gradient)' class='temperature-band' points='{{ band(timeBand) }}'/>
@@ -46,8 +33,8 @@
           {{#timeBand: i}}
             <!-- point markers for average highs -->
             <g class='marker' transform='translate({{ xScale(i+0.5) }},{{ yScale( counts[i] ) }})'>
-              <circle r='2'/>
-              <text y='-10'>{{ counts[i] }}</text>
+              <circle on-click='load_tweets:{{timeBand[i]}}' r='2'/>
+              <text y='-10' on-click='load_tweets:{{timeBand[i]}}'>{{ counts[i] }}</text>
             </g>
 
             <!-- point markers for average lows
@@ -61,7 +48,7 @@
 
     <div class='month-labels'>
       {{#timeBand:i}}
-        <span style='width: {{ 100 / timeBand.length }}%;'>{{ timeBand[i] }}</span>
+        <span style='width: {{ 100 / timeBand.length }}%;'>{{ time(timeBand[i]) }}</span>
       {{/timeBand}}
     </div>
   </div>

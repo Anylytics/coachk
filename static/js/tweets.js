@@ -11,7 +11,6 @@ tweetRactive = new Ractive({
     {
         time = utctime.split(" ")[3];
         split_time = time.split(":");
-        console.log(split_time);
         split_time[0] = String(parseInt(split_time[0])-5);
         return split_time[0]+":"+split_time[1];
     }

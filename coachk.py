@@ -29,10 +29,10 @@ def data():
     band = []
     count = []
     c = get_db().cursor()
-    for row in c.execute('SELECT * FROM (SELECT * from aggbins order by bin DESC limit 20) T1 order by bin ASC;'):
+    for row in c.execute('SELECT * FROM (SELECT * from aggbins order by bin DESC limit 10) T1 order by bin ASC;'):
         band.append( row[0] )
         count.append( row[1] )
-    return jsonify(band = band, counts = count);
+    return jsonify(band = band, counts = count)
 
 @app.route('/tweets/<timebin>')
 def tweets(timebin):
@@ -47,11 +47,21 @@ def tweets(timebin):
             dttm = row[2]
             user_id = row[1]
             for user in c.execute('SELECT * FROM users where user_id=?',[user_id]):
-                userid = user[1]
+                username = user[1]
                 pic = user[2]
-                username = user[3]
-                tweets.append({"tweet":tweet, "dttm": dttm, "username":username, "pic":pic, "user_id":userid})
-    return jsonify(tweets = tweets);
+                handle = user[3]
+                tweets.append({"tweet":tweet, "dttm": dttm, "username":username, "pic":pic, "user_id":handle})
+    return jsonify(tweets = tweets)
+
+@app.route('/score')
+def score():
+    c = get_db().cursor()
+    duke = 0
+    stj = 0
+    for row in c.execute('SELECT duke, stj FROM score WHERE rowid = (SELECT max(rowid) FROM score)'):
+        duke = row[0]
+        stj = row[1]
+    return jsonify(duke = duke, stj = stj)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000, debug='True')
