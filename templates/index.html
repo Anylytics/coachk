@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>#1k #coachk</title>
     <link href="./static/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/animate.css"/>
+    <link rel="stylesheet" href="./static/css/hover.css"/>
+    <link rel="stylesheet" href="./static/css/temperature.css"/>
     <link rel="stylesheet" href="./static/css/anylytics.css"/>
     <link rel="stylesheet" href="./static/css/onek.css"/>
-    <link rel="stylesheet" href="./static/css/animate.css"/>
-    <link rel="stylesheet" href="./static/css/temperature.css"/>
     <link rel="icon" type="image/x-icon" href="./static/img/favicon.png">
     <script type="text/javascript" src="./static/js/track.js"></script>
 </head>
@@ -33,41 +34,21 @@
 <div id="bodyContent">
 
     <div id="score">
-        <div id="away" class="team">
-            <img class="teamImg" src="../static/img/dukeScore.png"/>
-            <div class="teamInfo">
-                <span class="schoolName">Duke University</span><br />
-                <span class="schoolMascot">Blue Devils</span><br />
-                <span class="schoolRecord">(16-2)</span><br />
-            </div>
-        </div>
 
-        <div id="scoreBoard">
-            <div>0-0</div>
-        </div>
-
-        <div id="home" class="team">
-            <div class="teamInfo">
-                <span class="schoolName">St. Johns</span><br />
-                <span class="schoolMascot">Red Storm</span><br />
-                <span class="schoolRecord">(13-5)</span><br />
-            </div>
-            <img class="teamImg" src="../static/img/stJohnsScore.png"/>
-        </div>
     </div>
 
     <div id="timelineContainer">
-<
+
     </div>
 
     <div id="tweetBoxContainer">
         <div id="tweetBox">
             <div id="tweetBoxHead">
+                <!--Time info goes here, either LIVE or selected hour-->
+                <span id="hourContents"><div id="redCirc"></div>LIVE</span>
                 <span id="twitterImg">
                     <img src="./static/img/twitter_icon_small.png"/>
                 </span>
-                <!--Time info goes here, either LIVE or selected hour-->
-                <span id="hourContents"><div id="redCirc"></div>LIVE</span>
             </div>
             <div id="tweetBoxContents">
 
@@ -204,6 +185,14 @@
             </div>
         </div>
     </div>
+
+    <div id="accomplishments">
+    </div>
+
+
+    <footer>
+        <div>Anylytics</div>
+    </footer>
 
 </div>
 

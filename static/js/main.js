@@ -9,4 +9,4 @@ require.config({
     }
 });
 
-require(["temperatures"]);
+require(["temperatures", "scores"]);
