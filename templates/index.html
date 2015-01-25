@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>#1k #coachk</title>
-    <link href="../static/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/anylytics.css"/>
-    <link rel="stylesheet" href="../static/css/onek.css"/>
-    <link rel="stylesheet" href="../static/css/animate.css"/>
-    <link rel="icon" type="image/x-icon" href="../static/img/favicon.png">
-    <script type="text/javascript" src="../static/js/track.js"></script>
+    <link href="./static/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/anylytics.css"/>
+    <link rel="stylesheet" href="./static/css/onek.css"/>
+    <link rel="stylesheet" href="./static/css/animate.css"/>
+    <link rel="stylesheet" href="./static/css/temperature.css"/>
+    <link rel="icon" type="image/x-icon" href="./static/img/favicon.png">
+    <script type="text/javascript" src="./static/js/track.js"></script>
 
 
 
@@ -19,19 +20,19 @@
 <body class="animated fadeIn" >
 
 <!--<div id="share">
-    <a href="http://twitter.com/home?status=Celebrating Coach K's 1000th win:+http://onekforcoachk.com"><div id="twitter"><img class="social" src="../static/img/tweet.png"/></div></a>
-    <a href="http://www.facebook.com/share.php?u=http://onekforcoachk.com&title=Celebrating Coach K's 1000th win"><div id="facebook"><img class="social"  src="../static/img/fb.png"/></div></a>
-    <a href="http://www.reddit.com/submit?url=http://onekforcoachk.com&title=Celebrating Coach K's 1000th win"><div id="reddit"><img class="social"  src="../static/img/reddit.png"/></div></a>
+    <a href="http://twitter.com/home?status=Celebrating Coach K's 1000th win:+http://onekforcoachk.com"><div id="twitter"><img class="social" src="./static/img/tweet.png"/></div></a>
+    <a href="http://www.facebook.com/share.php?u=http://onekforcoachk.com&title=Celebrating Coach K's 1000th win"><div id="facebook"><img class="social"  src="./static/img/fb.png"/></div></a>
+    <a href="http://www.reddit.com/submit?url=http://onekforcoachk.com&title=Celebrating Coach K's 1000th win"><div id="reddit"><img class="social"  src="./static/img/reddit.png"/></div></a>
 </div>-->
 
 <div id="header" class="hidden-xs">
-    <img id="logo"src="../static/img/1kicon.png"/>
-    <img id="ball" class="animated bounceInDown" src="../static/img/ball.png"/>
+    <img id="logo"src="./static/img/1kicon.png"/>
+    <img id="ball" class="animated bounceInDown" src="./static/img/ball.png"/>
 </div>
 
 <div id="header" class="visible-xs">
-    <img id="logo"src="../static/img/1kicon.png"/>
-    <img id="ball" class="animated bounceInDown" src="../static/img/ball.png"/>
+    <img id="logo"src="./static/img/1kicon.png"/>
+    <img id="ball" class="animated bounceInDown" src="./static/img/ball.png"/>
 </div>
 
 <div id="spacer" class="hidden-xs"></div>
@@ -54,14 +55,14 @@
     </div>
 
     <div id="timelineContainer">
-        <img style="height:200px;" src="../static/img/timelineholder.png"/>
+        <!--<img style="height:200px;" src="./static/img/timelineholder.png"/>-->
     </div>
 
     <div id="tweetBoxContainer">
         <div id="tweetBox">
             <div id="tweetBoxHead">
                 <span id="twitterImg">
-                    <img src="../static/img/twitter_icon_small.png"/>
+                    <img src="./static/img/twitter_icon_small.png"/>
                 </span>
                 <!--Time info goes here, either LIVE or selected hour-->
                 <span id="hourContents"><div id="redCirc"></div>LIVE</span>
@@ -84,7 +85,9 @@
 
 </div>
 
-
+    <!-- RequireJS means we use this plugin to load everything else! -->
+     <!-- See main.js -->
+    <script data-main="./static/js/main" src="./static/js/lib/require.js"></script>
 
 
 </body>
