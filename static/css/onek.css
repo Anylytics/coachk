@@ -92,9 +92,24 @@ div#spacer.visible-xs {
 
 /****** FOOTER *********/
 
-footer > div {
+footer {
 	text-align:right;
-	margin-right:20px;
+	padding-right:20px;
+	padding-top:15px;
+	height:60px;
+	background-color:#262626;
+	width:100%;
+	margin-top:50px;
+}
+
+div#anylytics, div#anyLogoContainer {
+	display:inline-block;
+	color:white;
+}
+
+img#anyLogo {
+	height:30px;
+	display:inline-block;
 }
 
 
@@ -258,6 +273,7 @@ div#info > h3, h6 {
 @media (max-width: 768px) {
 	div#info >h3 {
 		font-size:2em;
+		background:transparent;
 	}
 }
 
@@ -478,6 +494,12 @@ div#coachKMuseum {
 	text-align:center;
 	background-color:#262626;
 	padding-top:20px;
+	z-index:1;
+}
+
+div#coachKMuseum > h3 {
+	color:#0680CD;;
+	font-family:'SourceSans', sans-serif;
 }
 
 div.milestoneTile {
@@ -566,11 +588,19 @@ div.accomplishmentBadge {
 	padding-top:20px;
 }
 
-div.accomplishmentContainer
+div.accomplishContainer {
+	margin-top:10px;
+	padding:3px;
+	padding-left:5px;
+	padding-right:5px;
+	border-radius:2px;
+	background-color:#262626;
+	color:white;
+}
 
 
 div.accomplishmentBadge > span.teamCoached {
-	font-size:2em;
+	font-size:2.5em;
 }
 
 div.accomplishmentBadge > span.winNum {
