@@ -123,7 +123,7 @@ function poll() {
 // recompute xScale and yScale when we need to
 ractive.observe({
   width: function ( width ) {
-    this.set( 'xScale', linearScale([ 0, 10 ], [ 0, width ]) );
+    this.set( 'xScale', linearScale([ 0, 360 ], [ 0, width ]) );
   },
   height: function ( height ) {
     var max_count = ractive.get("max_count");
