@@ -52,6 +52,14 @@ div#header > img#ball  {
 	margin-top:50px;
 }
 
+div#header > img#question {
+	padding:20px;
+	right:0;
+	margin:auto;
+	position:absolute;
+	margin-right:100px;
+}
+
 @media (max-width: 768px) {
 	div#header >img#logo {
 	height:20px;
@@ -59,7 +67,12 @@ div#header > img#ball  {
 	margin-left:30px;
 	}
 	div#header >img#ball {
-	display:none;
+		display:none;
+	}
+	div#header > img#question {
+		padding:5px;
+		margin-right:50px;
+		margin:auto;
 	}
 }
 
@@ -67,6 +80,7 @@ div#header > img#ball  {
 div#tagline > h1 {
 	color:#003366;
 	font-size:3rem;
+	margin-top:-10px;
 }
 
 div#spacer {
@@ -79,9 +93,24 @@ div#spacer.visible-xs {
 
 /****** FOOTER *********/
 
-footer > div {
+footer {
 	text-align:right;
-	margin-right:20px;
+	padding-right:20px;
+	padding-top:15px;
+	height:60px;
+	background-color:#262626;
+	width:100%;
+	margin-top:50px;
+}
+
+div#anylytics, div#anyLogoContainer {
+	display:inline-block;
+	color:white;
+}
+
+img#anyLogo {
+	height:30px;
+	display:inline-block;
 }
 
 
@@ -100,6 +129,14 @@ div#score {
 	height:150px;
 	margin-bottom:20px;
 	margin-top:20px;
+}
+
+#oneK {
+	height:250px;
+	margin:50px;
+	border-radius:5px;
+}
+
 }
 
 div.team {
@@ -121,8 +158,8 @@ img.teamImg {
 
 
 div#away > div.teamInfo {
-	text-align:left;
-	display:inline-block;
+	text-align:right;
+	display:block;
 	top:25%;
 	position:absolute;
 	margin-left:150px;
@@ -184,13 +221,13 @@ div#scoreBoard {
 	display:inline-block;
 	height:100%;
 	clear:both;
-	top:-30px;
-	font-family:'Dots',sans-serif;
+	top:-60px;
+	//font-family:'Dots',sans-serif;
 	padding-left: 30px
 }
 
 div#scoreBoard > div#scoreValue {
-	font-size:7rem;
+	font-size:2rem;
 }
 div#scoreBoard > div#time {
 	font-size:3rem;
@@ -213,11 +250,68 @@ div#scoreBoard > div#time {
 
 
 div#timelineContainer {
+	margin-top:350px;
 	height:280px;
 	width:100%;
 	background-color:darkgray;
 }
 
+@media (max-width: 768px) {
+	div#timelineContainer {
+		margin-top:400px;
+	}
+}
+
+#info {
+	padding:10px;
+	display:inline-block;
+}
+
+div#info > h3 {
+	position:absolute;
+	right:0;
+	text-align:right;
+	max-width:80%;
+	z-index: 5;
+	background-color:white;
+}
+
+div#info > h3, h6 {
+	color:gray;
+	display:inline-block;
+	margin-top:-7px;
+	font-size:3em;
+	margin-bottom:-5px;
+	font-family:'SourceSans', sans-serif;
+}
+
+@media (max-width: 768px) {
+	div#info >h3 {
+		font-size:2em;
+		background:transparent;
+	}
+}
+
+#clickMarker {
+	//fill:black;
+}
+
+#timeSelector:hover {
+	opacity:.6;
+	bottom:0px;
+}
+
+#clickMarker:hover {
+	opacity:0.6;
+}
+
+.binSelected {
+	opacity:.6;
+}
+
+#timelineText {
+	 font-size:1.2em;
+}
 
 div#tweetBoxContainer {
 	height:400px;
@@ -242,7 +336,7 @@ div#timelineBody {
 	width:calc(100%-20px);
 	width:20px;
 	display:inline-block;
-	background-color:yellow;
+	background-color:fyellow;
 }
 
 /********toggle*******/
@@ -253,14 +347,14 @@ div#timelineBody {
 }
 
 .toggle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: relative;
+  top:100%;
+  left:50px;
   width: 60px;
   height: 40px;
   border-radius: 100px;
-  background-color: #ddd;
-  margin: -20px -40px;
+  background-color: #eee;
+  margin: -40px -40px;
   overflow: hidden;
   box-shadow: inset 0 0 2px 1px rgba(0,0,0,.05);
 }
@@ -414,7 +508,13 @@ span.timeStamp {
 div#coachKMuseum {
 	text-align:center;
 	background-color:#262626;
-	padding-top:20px;
+	padding-top:80px;
+	z-index:1;
+}
+
+div#coachKMuseum > h3 {
+	color:#0680CD;;
+	font-family:'SourceSans', sans-serif;
 }
 
 div.milestoneTile {
@@ -453,12 +553,15 @@ div#oneThou {
 	width:100%;
 }
 
-
+div#oneThou > span.winNum {
+	font-size:4em;
+}
 
 
 div#accomplishments {
 	//background-color:#0680CD;
 	text-align:center;
+	padding-top:50px;
 }
 
 div#accomplishments > h1 {
@@ -496,21 +599,43 @@ div.accomplishmentBadge {
 	margin-bottom:40px;
 	margin-left:auto;
 	margin-right:auto;
-	height:100px;
-	width:100px;
+	height:150px;
+	width:150px;
 	background-color:white;
 	border-radius:50%;
 	padding-top:20px;
 }
 
-div.accomplishmentContainer
+div.accomplishContainer {
+	margin-top:30px;
+	padding:3px;
+	padding-left:5px;
+	padding-right:5px;
+	border-radius:2px;
+	background-color:#262626;
+	color:white;
+}
 
 
 div.accomplishmentBadge > span.teamCoached {
-	font-size:2em;
+	font-size:4em;
 }
 
 div.accomplishmentBadge > span.winNum {
 	font-size:1em;
 }
 
+div.accomplishmentBadge:hover {
+	background-color:#003366;
+	color:white;
+}
+
+div#awards {
+	//background-color:#0680CD;
+	text-align:center;
+}
+
+div#awards > h1 {
+	color:#262626;
+	padding-top:20px;
+}

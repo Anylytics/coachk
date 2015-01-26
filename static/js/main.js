@@ -5,8 +5,10 @@ require.config({
         ractive: 'lib/ractive',
         rv: 'loaders/rv',
         jquery: 'lib/jquery-1.11',
-        jqueryui: 'lib/jquery_ui'
+        jqueryui: 'lib/jquery_ui',
+        bootstrap: 'bootstrap/bootstrap'
     }
 });
 
-require(["temperatures", "scores"]);
+
+require(["temperatures"]);

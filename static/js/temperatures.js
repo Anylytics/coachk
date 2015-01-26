@@ -1,7 +1,25 @@
 // Now we've configured RequireJS, we can load our dependencies and start
-define([ 'ractive', 'rv!../ractive/temperatures', 'jquery', "tweets"], function ( Ractive, template, jquery, tweetRactive) {
+define([ 'ractive', 'rv!../ractive/temperatures', 'jquery', "tweets", "bootstrap"], function ( Ractive, template, jquery, tweetRactive, bootstrap) {
 
 var linearScale, getPointsArray, resize, ractive, twitterdata;
+
+
+//our polling function
+function poll() {
+  console.log("Polling");
+  $.ajax({
+    dataType: "json",
+    url: "./data",
+    success: function(json) {
+        var newBand = json["band"];
+        var newCounts = json["counts"];
+
+        ractive.set('timeBand', newBand);
+        ractive.set('counts', newCounts);
+        tweetRactive.fire('update', undefined, newBand[newBand.length-1]);
+    }
+  });
+}
 
 // this returns a function that scales a value from a given domain
 // to a given range. Hat-tip to D3
@@ -101,6 +119,7 @@ function poll() {
 }
 
 
+
 // recompute xScale and yScale when we need to
 ractive.observe({
   width: function ( width ) {
@@ -139,6 +158,12 @@ resize();
 
 setInterval(poll, 60000);
 poll();
+
+
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
 
 return ractive;
