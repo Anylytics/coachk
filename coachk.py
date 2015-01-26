@@ -29,7 +29,7 @@ def data():
     band = []
     count = []
     c = get_db().cursor()
-    for row in c.execute('SELECT * FROM (SELECT * from aggbins order by bin DESC limit 10) T1 order by bin ASC;'):
+    for row in c.execute('SELECT * FROM (SELECT * from aggbins order by rowid DESC limit 10) T1 order by bin ASC;'):
         band.append( row[0] )
         count.append( row[1] )
     return jsonify(band = band, counts = count)

@@ -68,9 +68,13 @@ ractive = new Ractive({
       return high;
     },
     time: function(utctime) {
-      var hour = parseInt(utctime.substring(0,2));
+      var hour = parseInt(utctime.substring(0,2)) - 5;
+      if (hour<=0)
+        hour = 24+hour;
+      if (hour >= 12)
+        hour = hour - 12;
       var minute = utctime.substring(2,4);
-      return String(hour-5)+":"+minute;
+      return String(hour)+":"+minute;
     }
   }
 });
